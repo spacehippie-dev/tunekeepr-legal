@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuneKeepr — Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #08080D;
+            color: #C8C8D0;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .brand {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #00CCFF;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+
+        .effective-date {
+            font-size: 14px;
+            color: #6B6B78;
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-top: 40px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: #00CCFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin: 40px 0;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 13px;
+            color: #6B6B78;
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 40px 20px 60px; }
+            h1 { font-size: 26px; }
+            h2 { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="brand">TuneKeepr</div>
+        <h1>Privacy Policy</h1>
+        <p class="effective-date">Effective date: March 8, 2026</p>
+
+        <p>TuneKeepr is an iOS app for DJs that extracts tracks from screenshots and organizes them into a crate system. This policy explains what data TuneKeepr collects, how it is used, and what choices you have.</p>
+
+        <h2>What TuneKeepr Does Not Do</h2>
+        <p>TuneKeepr does not collect analytics or usage data. It does not display advertising. It does not sell, share, or rent your personal information to third parties. It does not create user accounts or require registration. It does not track your location.</p>
+
+        <h2>Data Stored on Your Device</h2>
+        <p>All track data you create in TuneKeepr — titles, artists, tags, and crate organization — is stored locally on your device using Apple's SwiftData framework. This data is not transmitted to any server and is not accessible to TuneKeepr's developer. If you delete the app, this data is removed.</p>
+        <p>Authentication tokens for Spotify are stored in your device's Keychain, which is encrypted by iOS. These tokens are used solely to communicate with Spotify on your behalf and are never transmitted elsewhere.</p>
+
+        <h2>AI-Powered Track Extraction</h2>
+        <p>TuneKeepr uses AI to extract track names from screenshots and photos of tracklists. Here is how that works:</p>
+        <ul>
+            <li><span class="highlight">On-device text recognition:</span> Apple's Vision framework reads text from your images entirely on your device. No image data leaves your phone during this step.</li>
+            <li><span class="highlight">AI parsing:</span> The extracted text (not the image itself) is sent to Anthropic's Claude API for structured parsing into artist names, track titles, and tags. This text is processed by Anthropic according to their <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">privacy policy</a>. Anthropic states that API inputs are not used to train their models.</li>
+        </ul>
+        <p>In the released version of TuneKeepr, you provide your own Anthropic API key (BYOK model). Your key is stored in your device's Keychain and is sent only to Anthropic's API endpoint. The developer of TuneKeepr never has access to your API key or to the text processed through it.</p>
+        <p>During beta testing periods, TuneKeepr may use a developer-provided API key so that testers can evaluate the app without setting up their own key. In this case, the extracted text is still sent only to Anthropic's API — the developer does not receive, log, or store the content of your scans.</p>
+
+        <h2>Spotify Integration</h2>
+        <p>If you choose to connect Spotify, TuneKeepr uses Spotify's OAuth 2.0 with PKCE to authenticate. This means:</p>
+        <ul>
+            <li>You sign in directly with Spotify — TuneKeepr never sees your Spotify password.</li>
+            <li>TuneKeepr requests only the permissions it needs: saving tracks to your library, reading and modifying your playlists.</li>
+            <li>Your Spotify access and refresh tokens are stored in your device's Keychain.</li>
+            <li>You can disconnect Spotify at any time in TuneKeepr's Settings, which deletes all stored tokens.</li>
+        </ul>
+        <p>Track searches and save operations are sent directly from your device to Spotify's API. TuneKeepr's developer does not have access to your Spotify account or listening data.</p>
+
+        <h2>Apple Music Integration</h2>
+        <p>If you choose to use Apple Music, TuneKeepr uses Apple's MusicKit framework. Authorization is handled by iOS through a system dialog — no OAuth flow or tokens are involved. TuneKeepr can search the Apple Music catalog and add tracks to your library. It cannot read your existing library or listening history.</p>
+
+        <h2>Third-Party Services</h2>
+        <p>TuneKeepr communicates with the following third-party services:</p>
+        <ul>
+            <li><span class="highlight">Anthropic (Claude API)</span> — receives extracted text for AI parsing. <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic's privacy policy</a>.</li>
+            <li><span class="highlight">Spotify Web API</span> — receives search queries and save requests when you use Spotify features. <a href="https://www.spotify.com/legal/privacy-policy/" target="_blank" rel="noopener">Spotify's privacy policy</a>.</li>
+            <li><span class="highlight">Apple MusicKit</span> — receives search queries and library add requests when you use Apple Music features. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's privacy policy</a>.</li>
+        </ul>
+        <p>No data is sent to any other third-party service.</p>
+
+        <h2>Children's Privacy</h2>
+        <p>TuneKeepr is not directed at children under 13 and does not knowingly collect information from children.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>If this policy is updated, the revised version will be posted at this URL with an updated effective date. Continued use of TuneKeepr after changes constitutes acceptance of the revised policy.</p>
+
+        <h2>Contact</h2>
+        <p>If you have questions about this privacy policy, you can reach the developer at <a href="mailto:privacy@tunekeepr.com">privacy@tunekeepr.com</a>.</p>
+
+        <div class="footer">
+            &copy; 2026 TuneKeepr. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
