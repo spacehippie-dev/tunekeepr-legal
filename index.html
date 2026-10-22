@@ -105,53 +105,43 @@
     <div class="container">
         <div class="brand">TuneKeepr</div>
         <h1>Privacy Policy</h1>
-        <p class="effective-date">Effective date: March 8, 2026</p>
+        <p class="effective-date">Effective date: October 21, 2026</p>
 
-        <p>TuneKeepr is an iOS app for DJs that extracts tracks from screenshots and organizes them into a crate system. This policy explains what data TuneKeepr collects, how it is used, and what choices you have.</p>
+        <p>TuneKeepr is an iOS app for DJs that extracts tracks from screenshots and organizes them into a crate system. This policy explains what data TuneKeepr handles, where it goes, and what choices you have.</p>
 
         <h2>What TuneKeepr Does Not Do</h2>
-        <p>TuneKeepr does not collect analytics or usage data. It does not display advertising. It does not sell, share, or rent your personal information to third parties. It does not create user accounts or require registration. It does not track your location.</p>
+        <p>TuneKeepr does not collect analytics or usage data. It does not display advertising. It does not sell, share, or rent your personal information. It does not create user accounts or require registration. It does not track your location. The developer of TuneKeepr operates no servers and never receives your data.</p>
 
         <h2>Data Stored on Your Device</h2>
-        <p>All track data you create in TuneKeepr — titles, artists, tags, and crate organization — is stored locally on your device using Apple's SwiftData framework. This data is not transmitted to any server and is not accessible to TuneKeepr's developer. If you delete the app, this data is removed.</p>
-        <p>Authentication tokens for Spotify are stored in your device's Keychain, which is encrypted by iOS. These tokens are used solely to communicate with Spotify on your behalf and are never transmitted elsewhere.</p>
+        <p>All track data you create in TuneKeepr — titles, artists, tags, and crate organization — is stored locally on your device using Apple's SwiftData framework. This data is not transmitted to any server and is not accessible to TuneKeepr's developer. Deleting the app removes this data.</p>
+        <p>If you add an Anthropic API key, it is stored in your device's Keychain, which is encrypted by iOS. You can remove it at any time with <span class="highlight">Settings → Clear API Key</span>. Because iOS may keep Keychain items after an app is deleted, clear your key before deleting the app if you want it removed.</p>
 
-        <h2>AI-Powered Track Extraction</h2>
-        <p>TuneKeepr uses AI to extract track names from screenshots and photos of tracklists. Here is how that works:</p>
+        <h2>Track Extraction</h2>
+        <p>TuneKeepr reads tracklists from screenshots you select from your photo library. Your screenshots never leave your device.</p>
         <ul>
-            <li><span class="highlight">On-device text recognition:</span> Apple's Vision framework reads text from your images entirely on your device. No image data leaves your phone during this step.</li>
-            <li><span class="highlight">AI parsing:</span> The extracted text (not the image itself) is sent to Anthropic's Claude API for structured parsing into artist names, track titles, and tags. This text is processed by Anthropic according to their <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">privacy policy</a>. Anthropic states that API inputs are not used to train their models.</li>
+            <li><span class="highlight">Standard extraction (default):</span> Apple's Vision framework reads the text in your screenshots, and TuneKeepr parses it into tracks entirely on your device. On supported devices, Apple Intelligence may refine uncertain results, also on-device. Nothing is sent off your device.</li>
+            <li><span class="highlight">AI extraction with Claude (optional):</span> If you add your own Anthropic API key in Settings and tap <span class="highlight">Extract Tracks Using AI</span>, the text read from your screenshots (not the images) is sent directly from your device to Anthropic's Claude API to identify artists, titles, and tags. TuneKeepr asks for your permission before the first time this happens. This text is processed by Anthropic under its <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">privacy policy</a> and the terms of your Anthropic account. The developer of TuneKeepr never has access to your API key or to the text you send.</li>
         </ul>
-        <p>In the released version of TuneKeepr, you provide your own Anthropic API key (BYOK model). Your key is stored in your device's Keychain and is sent only to Anthropic's API endpoint. The developer of TuneKeepr never has access to your API key or to the text processed through it.</p>
-        <p>During beta testing periods, TuneKeepr may use a developer-provided API key so that testers can evaluate the app without setting up their own key. In this case, the extracted text is still sent only to Anthropic's API — the developer does not receive, log, or store the content of your scans.</p>
-
-        <h2>Spotify Integration</h2>
-        <p>If you choose to connect Spotify, TuneKeepr uses Spotify's OAuth 2.0 with PKCE to authenticate. This means:</p>
-        <ul>
-            <li>You sign in directly with Spotify — TuneKeepr never sees your Spotify password.</li>
-            <li>TuneKeepr requests only the permissions it needs: saving tracks to your library, reading and modifying your playlists.</li>
-            <li>Your Spotify access and refresh tokens are stored in your device's Keychain.</li>
-            <li>You can disconnect Spotify at any time in TuneKeepr's Settings, which deletes all stored tokens.</li>
-        </ul>
-        <p>Track searches and save operations are sent directly from your device to Spotify's API. TuneKeepr's developer does not have access to your Spotify account or listening data.</p>
 
         <h2>Apple Music Integration</h2>
-        <p>If you choose to use Apple Music, TuneKeepr uses Apple's MusicKit framework. Authorization is handled by iOS through a system dialog — no OAuth flow or tokens are involved. TuneKeepr can search the Apple Music catalog and add tracks to your library. It cannot read your existing library or listening history.</p>
+        <p>If you choose to use Apple Music, TuneKeepr uses Apple's MusicKit framework. Authorization is handled by iOS through a system dialog. TuneKeepr searches the Apple Music catalog for your tracks and adds the ones you choose to your library. It does not read your existing library or listening history.</p>
 
         <h2>Third-Party Services</h2>
-        <p>TuneKeepr communicates with the following third-party services:</p>
+        <p>TuneKeepr communicates with the following services, only when you use the related feature:</p>
         <ul>
-            <li><span class="highlight">Anthropic (Claude API)</span> — receives extracted text for AI parsing. <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic's privacy policy</a>.</li>
-            <li><span class="highlight">Spotify Web API</span> — receives search queries and save requests when you use Spotify features. <a href="https://www.spotify.com/legal/privacy-policy/" target="_blank" rel="noopener">Spotify's privacy policy</a>.</li>
-            <li><span class="highlight">Apple MusicKit</span> — receives search queries and library add requests when you use Apple Music features. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's privacy policy</a>.</li>
+            <li><span class="highlight">Anthropic (Claude API)</span> — receives extracted screenshot text when you use AI extraction. <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic's privacy policy</a>.</li>
+            <li><span class="highlight">Apple MusicKit</span> — receives search queries and library add requests when you send tracks to Apple Music. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's privacy policy</a>.</li>
         </ul>
         <p>No data is sent to any other third-party service.</p>
+
+        <h2>Deleting Your Data</h2>
+        <p>Use <span class="highlight">Settings → Clear All Tracks</span> to delete your saved tracks, and <span class="highlight">Settings → Clear API Key</span> to remove your Anthropic key. Deleting the app removes your tracks and settings.</p>
 
         <h2>Children's Privacy</h2>
         <p>TuneKeepr is not directed at children under 13 and does not knowingly collect information from children.</p>
 
         <h2>Changes to This Policy</h2>
-        <p>If this policy is updated, the revised version will be posted at this URL with an updated effective date. Continued use of TuneKeepr after changes constitutes acceptance of the revised policy.</p>
+        <p>If this policy is updated — for example, when new streaming services are added — the revised version will be posted at this URL with an updated effective date.</p>
 
         <h2>Contact</h2>
         <p>If you have questions about this privacy policy, you can reach the developer at <a href="mailto:privacy@tunekeepr.com">privacy@tunekeepr.com</a>.</p>
