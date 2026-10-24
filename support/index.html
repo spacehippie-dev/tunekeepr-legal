@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuneKeepr — Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #08080D;
+            color: #C8C8D0;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .brand {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #00CCFF;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+
+        .effective-date {
+            font-size: 14px;
+            color: #6B6B78;
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-top: 40px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: #00CCFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin: 40px 0;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 13px;
+            color: #6B6B78;
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 40px 20px 60px; }
+            h1 { font-size: 26px; }
+            h2 { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="brand">TuneKeepr</div>
+        <h1>Support</h1>
+        <p class="effective-date">Help with scanning tracklists and saving them to Apple Music</p>
+
+        <h2>Contact</h2>
+        <p>Questions, bugs, or feature requests? Email <a href="mailto:privacy@tunekeepr.com?subject=TuneKeepr%20Support">privacy@tunekeepr.com</a>. Please include your iOS version and, if possible, the screenshot you were scanning.</p>
+        <p>TestFlight testers can also send feedback directly from the TestFlight app, or by taking a screenshot in TuneKeepr and tapping <span class="highlight">Share Beta Feedback</span>.</p>
+
+        <hr class="divider">
+
+        <h2>Getting Started</h2>
+        <ul>
+            <li>Tap the scan button and choose up to <span class="highlight">10 tracklist screenshots</span> from your photo library — for example from SoundCloud, Instagram, YouTube, or 1001Tracklists.</li>
+            <li>Tap <span class="highlight">Extract Tracks</span>. TuneKeepr reads the text on your device and lists the tracks it finds.</li>
+            <li>Review the results. Tap a track to fix its title or artist, or swipe to remove it. Tracks marked with a warning are ones TuneKeepr is less sure about.</li>
+            <li>Save the tracks to your crate, then send them to Apple Music.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <p><span class="highlight">Do I need an Apple Music subscription?</span><br>
+        Yes, to save tracks to your Apple Music library. Scanning and organizing tracks in TuneKeepr works without one.</p>
+
+        <p><span class="highlight">Some tracks were missed or look wrong.</span><br>
+        Use clear, uncropped screenshots where the tracklist text is fully visible. Overlapping screenshots of the same list are fine — duplicates are removed automatically. You can edit any track before saving.</p>
+
+        <p><span class="highlight">A track wasn't found on Apple Music.</span><br>
+        TuneKeepr only adds a song when it's confident it found the right one, so unreleased IDs, bootlegs, and edits are often skipped. Check the spelling of the artist and title, then try sending it again.</p>
+
+        <p><span class="highlight">What is "Extract Tracks Using AI"?</span><br>
+        An optional mode for difficult tracklists that uses Anthropic's Claude. Add your own API key in <span class="highlight">Settings → AI Extraction</span> (get one from the <a href="https://console.anthropic.com/" target="_blank" rel="noopener">Anthropic Console</a>). TuneKeepr asks for your permission the first time, then sends only the text read from your screenshots — never the images — to Anthropic. Any usage costs are billed to your Anthropic account.</p>
+
+        <p><span class="highlight">TuneKeepr can't access Apple Music or my photos.</span><br>
+        Open the iOS <span class="highlight">Settings</span> app → <span class="highlight">TuneKeepr</span> and turn on <span class="highlight">Media &amp; Apple Music</span>. Photo access isn't required — the photo picker only shares the screenshots you choose.</p>
+
+        <p><span class="highlight">How do I back up or export my tracks?</span><br>
+        Go to <span class="highlight">Settings → Export All Tracks</span> to save or share a text file of your crate.</p>
+
+        <p><span class="highlight">How do I delete my data?</span><br>
+        Use <span class="highlight">Settings → Clear All Tracks</span> to delete your saved tracks and <span class="highlight">Settings → Clear API Key</span> to remove your Anthropic key. Your tracks are stored only on your device.</p>
+
+        <p><span class="highlight">Is Spotify supported?</span><br>
+        Not yet — Spotify support is planned for a future update.</p>
+
+        <h2>Requirements</h2>
+        <ul>
+            <li>iPhone or iPad running iOS 26.2 or later</li>
+            <li>Apple Music subscription to save tracks to your library</li>
+        </ul>
+
+        <div class="footer">
+            <a href="../">Privacy Policy</a> &nbsp;·&nbsp; &copy; 2026 TuneKeepr. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
